@@ -52,11 +52,11 @@ $(function() {
 			$.ajax({
 				url:"/member/userIdConfirm.do",
 				type:"post",
-				data="userId="+$("#userId").val(),
+				data:"userId="+$("#userId").val(),
 				error:function(){
 					alert('사이트 접속에 문제로 정상 작동하지 못하였습니다. 잠시 후 다시 시도해주세요.');
 				},
-				sucess: function(resultData){
+				success: function(resultData){
 					console.log("resultData:"+resultData);
 					if(resultData=="1"){
 						$("#userId").parents(".form-group").find(".error").html("현재 사용 중인 아이디입니다.");
@@ -86,7 +86,7 @@ $(function() {
 			return;
 		} else if(!inputVerify(1, '#userPwCheck', '.error:eq(2)')){
 			return;
-		} else if(!ipasswordCheck()){
+		} else if(!passwordCheck()){
 			return;
 		} else if(!formCheck($('#phone'), $('.error:eq(3)'), "전화번호를")){
 			return;
@@ -100,8 +100,8 @@ $(function() {
 			alert("아이디 중복 체크를 확인해주세요.");
 			return;
 		} else{
-			$("email").val($("#emailName").val()+"@"+$("#emailDomain").val());
-			$("#pinno").val($("birth").val()+"-"+$("#gender").val());
+			$("#email").val($("#emailName").val()+"@"+$("#emailDomain").val());
+			$("#pinno").val($("#birth").val()+"-"+$("#gender").val());
 			$("#memberForm").attr({
 				"method":"post",
 				"action":"/member/join.do"
@@ -114,7 +114,7 @@ $(function() {
 		location.href="/member/login.do";
 	})
 	
-	$("#joinResut").click(function(){
+	$("#joinResult").click(function(){
 		$("memberForm").each(function(){
 			this.reset();
 		});

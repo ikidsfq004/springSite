@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="refresh" content="8; url=/member/login.do">
 <title>회원가입 완료 화면</title>
 </head>
 <body>

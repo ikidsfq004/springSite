@@ -91,7 +91,7 @@ public class ChartMake {
 			JFreeChart chart = ChartFactory.createPieChart("연령대별 통계", dataset, true, true, false);
 			chart.setBackgroundPaint(Color.white);
 			chart.getTitle().setFont(new Font("sansserif", Font.BOLD, 16));
-			Font font = new Font("sansserif", Font.BOLD, 12);
+			chart.getLegend().setItemFont(new Font("sansserif", Font.BOLD, 12));
 			
 			PiePlot plot = (PiePlot) chart.getPlot();
 			plot.setLabelFont(new Font("sansserif", Font.BOLD, 14));

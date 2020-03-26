@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-compatible" content="IE=edge, chrome=1">
 <title>Join Member</title>
 <script type="text/javascript"
-	src="/resources.include/js/jquery-1.12.4.min.js"></script>
+	src="/resources/include/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="/resources/include/js/join.js"></script>
 <script type="text/javascript" src="/resources/include/js/common.js"></script>
 <script type="text/javascript">

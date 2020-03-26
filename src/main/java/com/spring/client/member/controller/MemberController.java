@@ -78,12 +78,12 @@ public class MemberController {
 	}
 
 	// 회원정보 수정
-	@RequestMapping(value = "modify,do", method = RequestMethod.GET)
-	public ModelAndView memberModity(HttpSession session) {
+	@RequestMapping(value = "modify.do", method = RequestMethod.GET)
+	public ModelAndView memberModify(HttpSession session) {
 		log.info("modify.do get 방식에 의한 메소드 호출 성공");
 		ModelAndView mav = new ModelAndView();
 
-		LoginVO login = (LoginVO) session.getAttribute("logion");
+		LoginVO login = (LoginVO) session.getAttribute("login");
 
 		// 로그인 정보가 없을 시 로그인 창으로 이동함
 		if (login == null) {

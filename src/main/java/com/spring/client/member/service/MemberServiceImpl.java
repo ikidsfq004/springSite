@@ -38,7 +38,6 @@ public class MemberServiceImpl implements MemberService {
 				sec.setUserId(mvo.getUserId());
 				sec.setSalt(Util.getRandomString());
 				sCode = memberDao.securityInsert(sec);
-
 				if (sCode == 1) {
 					mvo.setUserPw(new String(OpenCrypt.getSHA256(mvo.getUserPw(), sec.getSalt())));
 					memberDao.memberInsert(mvo);

@@ -22,7 +22,7 @@ public class ListExcelView extends AbstractXlsView {
 	
 	@Override
 	protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request, HttpServletResponse response) throws Exception{
-		response.setHeader("Content-Disposition", "attachment;fileName=\""+model.get("file_name")+"_"+new SimpleDateFormat("yyyyMMDD").format(Calendar.getInstance().getTime())+".xlsx"+"\"");
+		response.setHeader("Content-Disposition", "attachment;fileName=\""+model.get("file_name")+"_"+new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime())+".xlsx"+"\"");
 		response.setContentType("application/x-msexcel); charset=EUC-KR");
 		
 		String docRoot = request.getSession().getServletContext().getRealPath("/WEB-INF/excel/");

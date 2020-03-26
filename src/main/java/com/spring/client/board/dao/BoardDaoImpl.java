@@ -52,4 +52,10 @@ public class BoardDaoImpl implements BoardDao {
 		return session.delete("boardDelete",b_num);
 	}
 
+	@Override
+	public int boardListCnt(BoardVO bvo) {
+		// TODO Auto-generated method stub
+		return (Integer)session.selectOne("boardListCnt");
+	}
+
 }

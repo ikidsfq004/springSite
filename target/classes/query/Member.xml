@@ -6,26 +6,26 @@
 
 	<select id="securitySelect" parameterType="String"
 		resultType="security">
-		SELECT userid, salt from security where userid=#{userid}
+		SELECT userid, salt from security where userid=#{userId}
 	</select>
 
 	<insert id="securityInsert" parameterType="security">
 		INSERT INTO
 		security(userid, salt)
-		VALUES(#{userid},#{salt})
+		VALUES(#{userId},#{salt})
 	</insert>
 
 	<delete id="securityDelete" parameterType="String">
 		DELETE FROM
 		security
 		WHERE
-		userid = #{userid}
+		userid = #{userId}
 	</delete>
 
 	<select id="memberSelect" resultType="member"
 		parameterType="String">
 		SELECT idx, userid, userpw, username, pinno, email,
-		phone from spring_member where userid=#{userid}
+		phone from spring_member where userid=#{userId}
 	</select>
 
 	<insert parameterType="member" id="memberInsert">
@@ -35,21 +35,21 @@
 		</selectKey>
 		insert into spring_member(idx, userid, userpw, username, pinno, email,
 		phone)
-		values(#{idx},#{userid},#{userpw},#{username},#{pinno},#{email},#{phone})
+		values(#{idx},#{userId},#{userPw},#{userName},#{pinno},#{email},#{phone})
 	</insert>
 
 	<update id="memberUpdate" parameterType="member">
 		UPDATE spring_member
 		SET
-		<if test="userpw!=null and userpw!=''">
-			userpw=#{userpw},
+		<if test="userPw!=null and userPw!=''">
+			userpw=#{userPw},
 		</if>
 		phone=#{phone}, email=#{email}
-		where userid=#{userid}
+		where userid=#{userId}
 	</update>
 
-	<delete id="memberdelete" parameterType="String">
-		delete from spring_member where userid=#{userid}
+	<delete id="memberDelete" parameterType="String">
+		delete from spring_member where userid=#{userId}
 	</delete>
 
 </mapper>

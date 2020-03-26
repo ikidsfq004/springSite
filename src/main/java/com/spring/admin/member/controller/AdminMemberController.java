@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.admin.member.service.AdminMemberService;
 import com.spring.client.member.vo.MemberVO;
@@ -25,11 +26,11 @@ public class AdminMemberController {
 	@Autowired
 	private AdminMemberService adminMemberService;
 	
-	@RequestMapping
-	public String memberList(@ModelAttribute MemberVO bvo, Model model, HttpServletRequest request) {
+	@RequestMapping(value="/member/memberList", method=RequestMethod.GET)
+	public String memberList(@ModelAttribute MemberVO mvo, Model model, HttpServletRequest request) {
 		log.info("memberList 호출 성공");
 		
-		List<MemberVO> memberList = adminMemberService.memberList(bvo);
+		List<MemberVO> memberList = adminMemberService.memberList(mvo);
 		// 연령대별 데이터
 		Map<String, Integer> memberAgeList = adminMemberService.memberAgeList();
 		ChartMake.pieChart(request, memberAgeList);

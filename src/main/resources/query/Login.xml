@@ -40,12 +40,12 @@
 		where idx = #{idx} and userId = #{userId}
 	</update>
 
-	<select id="deleteSomething" parameterType="String" resultType="login">
+	<select id="loginHistorySelect" parameterType="String" resultType="login">
 		select
 		idx,
 		userId,
 		retry,
-		lastDailedLogin,
+		lastfailedLogin,
 		lastSuccessedLogin,
 		clientIP
 		from login_history

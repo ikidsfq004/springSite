@@ -26,7 +26,7 @@
 	    	<type>int</type>
 	    </attribute>
 	    <attribute>
-	    	<name>int_size</name>
+	    	<name>list_size</name>
 	    	<required>false</required>
 	    	<rtexprvalue>true</rtexprvalue>
 	    	<type>int</type>

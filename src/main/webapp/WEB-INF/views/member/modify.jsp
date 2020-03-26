@@ -2,14 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<c:set var="email" value="${fn:split(member.email,'@' }" />
+<c:set var="email" value="${fn:split(member.email,'@')}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Update Member</title>
 <script type="text/javascript"
-	src="/resources.include/js/jquery-1.12.4.min.js"></script>
+	src="/resources/include/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="/resources/include/js/common.js"></script>
 <script type="text/javascript" src="/resources/include/js/modify.js"></script>
 <script type="text/javascript">

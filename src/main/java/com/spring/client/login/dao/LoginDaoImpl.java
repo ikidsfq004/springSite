@@ -33,7 +33,7 @@ public class LoginDaoImpl implements LoginDao {
 	}
 
 	@Override
-	public LoginVO loginHisorySelect(String userId) {
+	public LoginVO loginHistorySelect(String userId) {
 		return (LoginVO) session.selectOne("loginHistorySelect", userId);
 	}
 

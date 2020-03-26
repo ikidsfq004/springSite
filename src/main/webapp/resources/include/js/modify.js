@@ -8,15 +8,15 @@ $(function() {
 			"비밀번호와 비밀번호 확인란은 값이 일치해야합니다.", "- 포함 입력해주세요. 예시) 010-0000-0000" ];
 
 	$('.error').each(function(index) {
-		$('.error').each.eq(index).html(message[index]);
+		$('.error').eq(index).html(message[index]);
 	});
 
-	$("#oldUsetPw, #userPw, #userPwCheck, #phone").bind("focus", function() {
-		var idx = $("#oldUsetPw, #userPw, #userPwCheck, #phone").index(this);
-		$(this).parents(".from-group").find("error").html(message[idx]);
+	$("#oldUserPw, #userPw, #userPwCheck, #phone").bind("focus", function() {
+		var idx = $("#oldUserPw, #userPw, #userPwCheck, #phone").index(this);
+		$(this).parents(".form-group").find("error").html(message[idx]);
 	});
 
-	$("#midofy")
+	$("#modify")
 			.click(
 					function() {
 						if (!formCheck($('#oldUserPw'), $('.error:eq(0)'),
@@ -37,7 +37,7 @@ $(function() {
 								if (!inputVerify(1, '#userPw', '.error:eq(1)')) {
 									return;
 								}
-								if (!idPwCheck()) {
+								if (!idPwdCheck()) {
 									return;
 								}
 							}
@@ -49,7 +49,7 @@ $(function() {
 								}
 							}
 							if ($('#userPw').val() != ""
-									&& $('#userPwCheck'.val() != "")) {
+									&& $('#userPwCheck').val() != "") {
 								if (!passwordCheck()) {
 									return;
 								}
@@ -87,7 +87,7 @@ function passwordCheck() {
 		return false;
 	}
 
-	return truel
+	return true;
 }
 
 function idPwdCheck() {

@@ -5,6 +5,6 @@
 <h1 class="page-header">회원 정보 관리</h1>
 
 <div class="row placeholders">
-	<img src="graph/pieChart.jpg" class="img-thumbnail"/>&nbsp;&nbsp;
-	<img src="graph/barChart.jpg" class="img-thumbnail"/>
+	<img src="/graph/pieChart.jpg" class="img-thumbnail"/>&nbsp;&nbsp;
+	<img src="/graph/barChart.jpg" class="img-thumbnail"/>
 </div>

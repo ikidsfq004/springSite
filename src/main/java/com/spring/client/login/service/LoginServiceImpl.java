@@ -60,7 +60,7 @@ public class LoginServiceImpl implements LoginService{
 	}
 	@Override
 	public LoginVO loginHistorySelect(String userId) {
-		return loginDao.loginHisorySelect(userId);
+		return loginDao.loginHistorySelect(userId);
 	}
 	
 }

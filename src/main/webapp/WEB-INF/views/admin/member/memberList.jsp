@@ -28,7 +28,7 @@
 						<c:forEach var="member" items="${memberList}" varStatus="status">
 							<tr class="tac" data-idx="${member.idx}">
 								<td>${status.count}</td>
-								<td><span class="goDetail">${member.userid}</span></td>
+								<td><span class="goDetail">${member.userId}</span></td>
 								<td>${member.userName}</td>
 								<td>${member.email}</td>
 								<td>${member.phone}</td>

@@ -6,7 +6,7 @@ var keyword = "", serach = "", start_date = "", end_date = "";
 $(function() {
 	if (search != "b_date"){
 		$("dateCheck").hide();
-		var date = getDateFormat(new date())
+		var date = getDateFormat(new Date())
 		$('#start_Date').val(date);
 		$('#end_Date').val(date);
 	} else {
@@ -18,7 +18,7 @@ $(function() {
 	
 	if (keyword != "") {
 		$("#search").val(search);
-		$("keyword").val(keyword);
+		$("#keyword").val(keyword);
 	}
 	
 	/* 검색 버튼 클릭 시 처리 이벤트 */

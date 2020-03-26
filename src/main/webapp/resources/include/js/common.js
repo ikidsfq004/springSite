@@ -24,9 +24,8 @@ function checkForm(item, msg) {
 }
 function formCheck(main, item, msg) {
 	if (main.val().replace(/\s/g,"")=="") {
-		item.css("color", "#000099").html(msg+ "입력해 주세요.");
+		item.css("color", "#000099").html(msg+ " 입력해 주세요.");
 		main.val("");
-		item.focus();
 		return false;
 	}else{
 		return true;
@@ -47,7 +46,7 @@ function chkFile(item) {
 var pattern = [
 	"((?=.*[a-zA-Z])(?=.*[0-9]).{6,10})",
 	"((?=.*[a-zA-Z])(?=.*[0-9@#$%]).{8,12})",
-	"^||d{3}-||{3,4}-||d{4}"];
+	"^\\d{3}-\\d{3,4}-\\d{4}"];
 function inputVerify(index,data, printarea) {
 	var data_regExp = new RegExp(pattern[index]);
 	var match = data_regExp.exec($(data).val());
@@ -72,4 +71,15 @@ function getDateFormat(dateValue) {
 	
 	var result = year + "-" + month + "-" + day;
 	return result;
+}
+
+function chkData(item, msg) {
+	if($(item).val().replace(/\s/g,"")==""){
+		alert(msg + " 입력해 주세요.");
+		$(item).val("");
+		$(item).focus();
+		return false;
+	} else {
+		return true;
+	}
 }

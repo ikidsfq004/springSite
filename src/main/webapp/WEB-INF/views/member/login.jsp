@@ -7,11 +7,11 @@
 <meta charset="UTF-8">
 <title>Login</title>
 <!-- [if It IE 9 -->
-<script type="text/javascript">
-	src = "resources/includes/js/jquery-1.12.4.min.js" >
+<script src="/resources/include/js/html5shiv.js"></script>
+<script type="text/javascript" src="/resources/include/js/jquery-1.12.4.min.js">
 </script>
 <script type="text/javascript" src="/resources/include/js/common.js"></script>
-<script type="text/javascript" src="resources/include/js/login.js"></script>
+<script type="text/javascript" src="/resources/include/js/login.js"></script>
 <script type="text/javascript">
 	function errCodeCheck() {
 		var errCode = '<c:out value="${errCode}"/>';
@@ -59,18 +59,22 @@
 						<div class="col-sm-offset-2 col-sm-6">
 							<input type="button" value="로그인 " id="loginBtn"
 								class="btn btn-default" />
+							<input type="button" value="회원가입" id="joinBtn"
+								class="btn btn-default" />
 						</div>
 					</div>
 				</form>
 			</c:if>
 			<c:if test="${login.userId != null and login.userId != ''}">
-				<legend>
-					<strong>[ ${login.userName} ]님 반갑습니다</strong> <span id="membermenu"
-						class="tac"> <a href="/member/logout.do">로그아웃</a>
-						&nbsp;&nbsp;&nbsp; <a href="/member/modify.do">정보수정(비밀번호 변경)</a>&nbsp;&nbsp;&nbsp;;
-						<a href="/member/delete.do">회원탈퇴</a>
-					</span>
-				</legend>
+				<fieldset id="loginAfter">
+					<legend>
+						<strong>[ ${login.userName} ]님 반갑습니다</strong> <span id="membermenu"
+							class="tac"> <a href="/member/logout.do">로그아웃</a>
+							&nbsp;&nbsp;&nbsp; <a href="/member/modify.do">정보수정(비밀번호 변경)</a>&nbsp;&nbsp;&nbsp;;
+							<a href="/member/delete.do">회원탈퇴</a>
+						</span>
+					</legend>
+				</fieldset>
 			</c:if>
 		</div>
 	</div>
